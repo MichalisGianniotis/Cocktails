@@ -1,0 +1,50 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+const cocktails = [
+  {
+    name: "Mojito",
+    ingredients: "Ρούμι, Δυόσμος, Ζάχαρη, Λάιμ, Σόδα",
+    image : "detail_Skinny_Mojito_4_2022-removebg-preview.png",
+    // image: "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
+  },
+  {
+    name: "Margarita",
+    ingredients: "Τεκίλα, Τριπλό Σεκ, Χυμός Λάιμ, Αλάτι",
+    image : "test-removebg-preview.png"
+    // image : "classic-margarita-cocktail-720x720-removebg-preview.png",
+    // image: "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg",
+  },
+  {
+    name: "Old Fashioned",
+    ingredients: "Μπέρμπον, Ζάχαρη, Πικρά, Πορτοκάλι",
+    // Bourbon, Sugar, Bitters, Orange
+    image : "ChicoryOldFashioned_Detail-0006_2022-removebg-preview.png",
+    // image: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
+  },
+];
+
+export default function CocktailApp() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
+      <div className="max-w-md mx-auto mb-6">
+        <Input placeholder="Search cocktails..." className="bg-gray-800 text-white border-gray-700" />
+      </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        {cocktails.map((cocktail, index) => (
+          // bg-linear-to-br from-black to-green-700
+          <Card key={index} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700": cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-500": cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" : "" }`}>
+            <img src={cocktail.image} alt={cocktail.name} className="w-full h-70 object-cover rounded-t-2xl" />
+            <CardContent className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
+              <p className="text-sm">{cocktail.ingredients}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
