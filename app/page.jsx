@@ -12,17 +12,22 @@ const cocktails = [
   },
   {
     name: "Margarita",
-    ingredients: "Τεκίλα, Τριπλό Σεκ, Χυμός Λάιμ, Αλάτι",
+    ingredients: "Τεκίλα, Triple Sec, Χυμός Λάιμ, Αλάτι",
     image : "test-removebg-preview.png"
-    // image : "classic-margarita-cocktail-720x720-removebg-preview.png",
+    // image : "margarita.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg",
   },
   {
     name: "Old Fashioned",
-    ingredients: "Μπέρμπον, Ζάχαρη, Πικρά, Πορτοκάλι",
+    ingredients: "Μπέρμπον ή ουίσκι, Ζάχαρη, Πικρά, Νερό, Πορτοκάλι",
     // Bourbon, Sugar, Bitters, Orange
     image : "ChicoryOldFashioned_Detail-0006_2022-removebg-preview.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
+  },
+  {
+    name : "Negroni",
+    ingredients: "Τζιν, Campari, Γλυκό βερμούτ",
+    image : "negroni.png"
   },
 ];
 
@@ -31,12 +36,16 @@ export default function CocktailApp() {
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
       <div className="max-w-md mx-auto mb-6">
-        <Input placeholder="Search cocktails..." className="bg-gray-800 text-white border-gray-700" />
+        <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'} />
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {cocktails.map((cocktail, index) => (
           // bg-linear-to-br from-black to-green-700
-          <Card key={index} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700": cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-500": cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" : "" }`}>
+          <Card key={index} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
+           cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
+           cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
+           cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
+
             <img src={cocktail.image} alt={cocktail.name} className="w-full h-70 object-cover rounded-t-2xl" />
             <CardContent className="p-4">
               <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
