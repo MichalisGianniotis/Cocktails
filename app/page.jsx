@@ -7,13 +7,13 @@ const cocktails = [
   {
     name: "Mojito",
     ingredients: "Ρούμι, Δυόσμος, Ζάχαρη, Λάιμ, Σόδα",
-    image : "detail_Skinny_Mojito_4_2022-removebg-preview.png",
+    image : "mojito2-removebg-preview.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
   },
   {
     name: "Margarita",
     ingredients: "Τεκίλα, Triple Sec, Χυμός Λάιμ, Αλάτι",
-    image : "test-removebg-preview.png"
+    image : "margarita3-removebg-preview.png"
     // image : "margarita.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg",
   },
@@ -21,13 +21,14 @@ const cocktails = [
     name: "Old Fashioned",
     ingredients: "Μπέρμπον ή ουίσκι, Ζάχαρη, Πικρά, Νερό, Πορτοκάλι",
     // Bourbon, Sugar, Bitters, Orange
-    image : "ChicoryOldFashioned_Detail-0006_2022-removebg-preview.png",
+    image : "Untitled_design2-removebg-preview.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
   },
   {
     name : "Negroni",
     ingredients: "Τζιν, Campari, Γλυκό βερμούτ",
-    image : "negroni.png"
+    image : "Untitled_design__1_-removebg-preview.png"
+    // 410 * 410
   },
 ];
 
@@ -36,7 +37,7 @@ export default function CocktailApp() {
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
       <div className="max-w-md mx-auto mb-6">
-        <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'} />
+        <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'}/>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {cocktails.map((cocktail, index) => (
@@ -46,7 +47,7 @@ export default function CocktailApp() {
            cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
            cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
 
-            <img src={cocktail.image} alt={cocktail.name} className="w-full h-70 object-cover rounded-t-2xl" />
+            <img src={cocktail.image} alt={cocktail.name} className="w-full h-65 object-cover rounded-t-2xl" />
             <CardContent className="p-4">
               <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
               <p className="text-sm">{cocktail.ingredients}</p>
