@@ -34,7 +34,7 @@ const cocktails = [
 
 export default function CocktailApp() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="min-h-screen bg-gray-900 text-white p-10">
       <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
       <div className="max-w-md mx-auto mb-6">
         <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'}/>
