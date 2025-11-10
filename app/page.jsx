@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 
 const cocktails = [
   {
+    id : 1,
     name: "Mojito",
     ingredients: "Ρούμι, Δυόσμος, Ζάχαρη, Λάιμ, Σόδα",
     image : "mojito2-removebg-preview.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
   },
   {
+    id : 2,
     name: "Margarita",
     ingredients: "Τεκίλα, Triple Sec, Χυμός Λάιμ, Αλάτι",
     image : "margarita3-removebg-preview.png"
@@ -18,6 +20,7 @@ const cocktails = [
     // image: "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg",
   },
   {
+    id : 3,
     name: "Old Fashioned",
     ingredients: "Μπέρμπον ή ουίσκι, Ζάχαρη, Πικρά, Νερό, Πορτοκάλι",
     // Bourbon, Sugar, Bitters, Orange
@@ -25,6 +28,7 @@ const cocktails = [
     // image: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
   },
   {
+    id : 4,
     name : "Negroni",
     ingredients: "Τζιν, Campari, Γλυκό βερμούτ",
     image : "Untitled_design__1_-removebg-preview.png"
@@ -40,9 +44,9 @@ export default function CocktailApp() {
         <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'}/>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
-        {cocktails.map((cocktail, index) => (
+        {cocktails.map((cocktail) => (
           // bg-linear-to-br from-black to-green-700
-          <Card key={index} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
+          <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
            cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
            cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
            cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
