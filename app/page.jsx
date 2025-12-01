@@ -44,7 +44,7 @@ export default function CocktailApp() {
         <Input placeholder="Search cocktails..." className={'bg-gray-800 text-white border-gray-700'}/>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
-        {cocktails.map((cocktail) => (
+        {cocktails.slice(0,3).map((cocktail) => (
           // bg-linear-to-br from-black to-green-700
           <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
            cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
