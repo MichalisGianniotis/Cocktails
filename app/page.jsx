@@ -38,7 +38,7 @@ export default function CocktailApp() {
         ) : (
           displayedCocktails.map((cocktail) => (
             // bg-linear-to-br from-black to-green-700
-            <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-gray-400 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
+            <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-gray-300 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
             cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
             cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
             cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
