@@ -23,7 +23,7 @@ export default function CocktailApp() {
   
   
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white p-10">
+    <div className="min-h-screen w-full bg-gray-900 text-white p-10" role="main">
       <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
       <div className="max-w-md mx-auto mb-6">
         <Input 
