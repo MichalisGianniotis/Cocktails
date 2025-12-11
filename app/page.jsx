@@ -26,23 +26,25 @@ export default function CocktailApp() {
     <div className="min-h-screen bg-gray-900 text-white p-10">
       <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
       <div className="max-w-md mx-auto mb-6">
-        <Input placeholder="Search cocktails..." onChange={e => setSearch(e.target.value)} className={'bg-gray-800 text-white border-gray-700'}/>
+        <Input 
+        placeholder="Search cocktails..." 
+        onChange={e => setSearch(e.target.value)} 
+        className={'bg-gray-800 text-white border-gray-700 w-full max-w-md'}/>
       </div>
       
       <div className="grid md:grid-cols-3 gap-6">
 
         {displayedCocktails.length === 0 ? (
-            <p className="text-center col-span-full text-lg text-gray-300 italic">
+            <p className="text-center col-span-full text-lg text-gray-300 italic break-words">
             No results found for "<span className="font-bold">{search}</span>"
           </p>
         ) : (
           displayedCocktails.map((cocktail) => (
             // bg-linear-to-br from-black to-green-700
-            <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-gray-300 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
+            <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-2 border-gray-400 mt-6 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
             cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
             cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
             cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
-
               <img src={cocktail.image} alt={cocktail.name} className="w-full h-65 object-cover rounded-t-2xl"/>
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
