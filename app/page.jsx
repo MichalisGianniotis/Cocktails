@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import cocktails from "@/data/cocktails";
+import Image from "next/image";
 
 
 export default function CocktailApp() {
@@ -45,7 +46,15 @@ export default function CocktailApp() {
             cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
             cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
             cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
-              <img src={cocktail.image} alt={cocktail.name} className="w-full h-65 object-cover rounded-t-2xl"/>
+              <div className="relative w-full h-[260px]">
+                <Image
+                  src={cocktail.image}
+                  alt={cocktail.name} 
+                  fill
+                  className="object-cover rounded-t-2xl"
+                  priority = {cocktail.id === 0}
+                />
+              </div>
               <CardContent className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
                 <p className="text-sm">{cocktail.ingredients}</p>
