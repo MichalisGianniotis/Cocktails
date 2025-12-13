@@ -27,6 +27,7 @@ const cocktails = [
     name : "Negroni",
     ingredients: "Τζιν, Campari, Γλυκό βερμούτ",
     image : "/Negroni.png"
+    
     // 410 * 410
   },
 ];

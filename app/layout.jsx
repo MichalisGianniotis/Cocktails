@@ -25,7 +25,7 @@ export const metadata = {
       url: "https://cocktails-mapp.vercel.app/",
       images: [
         {
-          url: "/android-chrome-512x512.png",
+          url: "https://cocktails-mapp.vercel.app/android-chrome-512x512.png",
         },
       ],
       type: "website",
@@ -45,6 +45,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
