@@ -40,7 +40,7 @@ export default function CocktailApp() {
             No results found for "<span className="font-bold">{search}</span>"
           </p>
         ) : (
-          displayedCocktails.map((cocktail) => (
+          displayedCocktails.map((cocktail, index) => (
             // bg-linear-to-br from-black to-green-700
             <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-3 border-gray-500 mt-6 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
             cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
@@ -52,7 +52,7 @@ export default function CocktailApp() {
                   alt={cocktail.name} 
                   fill
                   className="object-cover rounded-t-2xl"
-                  priority = {cocktail.id === 0}
+                  priority = {index < 3}
                 />
               </div>
               <CardContent className="p-4">
