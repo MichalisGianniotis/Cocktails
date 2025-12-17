@@ -30,7 +30,7 @@ export const metadata = {
       url: "https://shakermap.vercel.app/",
       images: [
         {
-          url: "https://shakermap.vercel.app/cocktails.png",
+          url: "https://shakermap.vercel.app/cocktails-og.png",
         },
       ],
       type: "website",
