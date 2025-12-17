@@ -31,7 +31,7 @@ export const metadata = {
       images: [
         {
           url: "https://shakermap.vercel.app/cocktails.png",
-          width: 1200,
+          width: 1300,
           height: 1024,
           alt: "Cocktail Recipes – Mojito, Margarita και άλλα",
         },
