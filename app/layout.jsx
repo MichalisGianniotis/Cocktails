@@ -18,14 +18,14 @@ export const metadata = {
     description: "Ανακάλυψε εύκολες και γρήγορες συνταγές για cocktails όπως Mojito, Margarita, Daiquiri και άλλα. Ιδανικό για bartenders & λάτρεις των ποτών!",
     keywords: ["cocktails", "συνταγές κοκτέιλ", "mojito", "margarita", "daiquiri", "ρούμι", "λάιμ", "ποτά", "bar", "bartending"],
     robots: "index, follow",
-    canonical: "https://cocktails-mapp.vercel.app/",
+    canonical: "https://shakermap.vercel.app/",
     openGraph: {
       title: "🍹 Cocktail Recipes | Συνταγές για Mojito & άλλα",
       description: "Δες πώς να φτιάξεις Mojito, Margarita και άλλα αγαπημένα cocktails βήμα-βήμα.",
-      url: "https://cocktails-mapp.vercel.app/",
+      url: "https://shakermap.vercel.app/",
       images: [
         {
-          url: "https://cocktails-mapp.vercel.app/cocktails.png",
+          url: "https://shakermap.vercel.app/cocktails.png",
         },
       ],
       type: "website",
