@@ -25,7 +25,6 @@ export default function CocktailApp() {
   const handleClear = () => {
     setSearch("");
   };
-  
   return (
       <div className="min-h-screen w-full bg-gray-900 text-white p-10" role="main">
         <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
@@ -34,7 +33,7 @@ export default function CocktailApp() {
             placeholder="Search cocktails..." 
             value={search}
             onChange={e => setSearch(e.target.value)} 
-            className={'bg-gray-800 text-white border-gray-700 w-full max-w-md h-10'}
+            className={'bg-gray-800 text-white border-gray-700 w-full max-w-md h-10 pr-8'}
           />
           {search && (
             <button
