@@ -12,7 +12,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cocktail Recipes",
+  title: {
+    default: "ShakerMap – Cocktail Recipes",
+    template: "%s | ShakerMap",
+  },
   description: "Ανακάλυψε εύκολες και γρήγορες συνταγές για cocktails όπως Mojito, Margarita, Daiquiri και άλλα. Ιδανικό για bartenders & λάτρεις των ποτών!",
   metadataBase: new URL('https://shakermap.vercel.app'),
   keywords: ["cocktails", "συνταγές κοκτέιλ", "mojito", "margarita", "daiquiri", "ρούμι", "λάιμ", "ποτά", "bar", "bartending"],
@@ -23,6 +26,7 @@ export const metadata = {
     google: 'qZFCnauU7LTRbNyPupI8ZzCluUF4AVpjNiULySKtACQ', // Κωδικός επαλήθευσης της Google
   },
   openGraph: {
+    siteName: "ShakerMap",
     title: "🍹 Cocktail Recipes | Συνταγές για Mojito & άλλα",
     description: "Δες πώς να φτιάξεις Mojito, Margarita και άλλα αγαπημένα cocktails βήμα-βήμα.",
     url: "https://shakermap.vercel.app/",

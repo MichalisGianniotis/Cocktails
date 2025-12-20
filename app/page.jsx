@@ -38,7 +38,7 @@ export default function CocktailApp() {
           {search && (
             <button
               onClick={handleClear}
-              className="absolute right-3 top-0 h-10 flex items-center text-2xl"
+              className="absolute right-3 top-0 h-10 flex items-center text-2xl cursor-pointer"
             >
               <X className= "h-4 w-4"/>
             </button>
