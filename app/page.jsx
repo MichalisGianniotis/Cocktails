@@ -13,20 +13,19 @@ import { X } from "lucide-react";
 export default function CocktailApp() {
   const [search, setSearch] = useState("");
   // const [visibleCount, setVisibleCount] = useState(3);
+  const [loaded, setLoaded] = useState(false);
 
   const filteredCocktails = cocktails.filter(c =>
     c.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const displayedCocktails = search === "" 
-  ? filteredCocktails.slice(0, 3) // show only first 3 by default
-  : filteredCocktails; 
+  const displayedCocktails = filteredCocktails;
 
   const handleClear = () => {
     setSearch("");
   };
   return (
-      <div className="min-h-screen w-full bg-gray-900 text-white p-10" role="main">
+      <div className="min-h-screen w-full bg-gray-900 text-white p-10 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="main">
         <h1 className="text-4xl font-bold text-center mb-8">🍹 Cocktail Recipes</h1>
         <div className="max-w-md mx-auto mb-6 relative">
           <Input 
@@ -64,6 +63,12 @@ export default function CocktailApp() {
                     alt={cocktail.name}
                     fill
                     className="object-cover rounded-t-2xl"
+                    onLoad={() => setLoaded(true)}
+                    style={{
+                        opacity: loaded ? 1 : 0,
+                        transition: "opacity 0.5s ease",
+                        display: "block",
+                      }}
                     priority={index < 3} 
                   />
                 </div>

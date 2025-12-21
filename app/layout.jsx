@@ -12,16 +12,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://shakermap.vercel.app'),
   title: {
     default: "ShakerMap – Cocktail Recipes",
     template: "%s | ShakerMap",
   },
   description: "Ανακάλυψε εύκολες και γρήγορες συνταγές για cocktails όπως Mojito, Margarita, Daiquiri και άλλα. Ιδανικό για bartenders & λάτρεις των ποτών!",
-  metadataBase: new URL('https://shakermap.vercel.app'),
   keywords: ["cocktails", "συνταγές κοκτέιλ", "mojito", "margarita", "daiquiri", "ρούμι", "λάιμ", "ποτά", "bar", "bartending"],
-  robots: "index, follow",
-  canonical: "https://shakermap.vercel.app/",
-  alternates: {},
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://shakermap.vercel.app/",
+  },
   verification: {
     google: 'qZFCnauU7LTRbNyPupI8ZzCluUF4AVpjNiULySKtACQ', // Κωδικός επαλήθευσης της Google
   },
@@ -30,11 +34,7 @@ export const metadata = {
     title: "🍹 Cocktail Recipes | Συνταγές για Mojito & άλλα",
     description: "Δες πώς να φτιάξεις Mojito, Margarita και άλλα αγαπημένα cocktails βήμα-βήμα.",
     url: "https://shakermap.vercel.app/",
-    images: [
-      {
-        url: "https://shakermap.vercel.app/cocktails.png",
-      },
-    ],
+    images: ["/cocktails.png"],
     type: "website",
   },
   twitter: {
@@ -45,6 +45,14 @@ export const metadata = {
     icon: "/favicon.ico",
     // shortcut: "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.9em'%20font-size='90'%3E%F0%9F%8D%B9%3C/text%3E%3C/svg%3E",
     // apple: "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='0.9em'%20font-size='90'%3E%F0%9F%8D%B9%3C/text%3E%3C/svg%3E",
+  },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "ShakerMap",
+      url: "https://shakermap.vercel.app",
+    }),
   },
   // manifest: "/site.webmanifest",
 };

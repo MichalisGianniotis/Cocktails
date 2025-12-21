@@ -17,7 +17,7 @@ const cocktails = [
   {
     id : 3,
     name: "Old Fashioned",
-    ingredients: "Μπέρμπον ή ουίσκι, Ζάχαρη, Πικρά, Νερό, Πορτοκάλι",
+    ingredients: "Μπέρμπον ή ουίσκι, Ζάχαρη, Bitters, Νερό, Πορτοκάλι",
     // Bourbon, Sugar, Bitters, Orange
     image : "/old-fashioned.png",
     // image: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
