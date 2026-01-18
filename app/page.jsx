@@ -7,7 +7,8 @@ import { useState } from "react";
 // import { Button } from "@/components/ui/button";
 import cocktails from "@/data/cocktails";
 import Image from "next/image";
-import { X } from "lucide-react";
+import Link from "next/link";
+import { X, Target, Clock } from "lucide-react";
 
 
 export default function CocktailApp() {
@@ -44,7 +45,7 @@ export default function CocktailApp() {
           )}
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid min-[440px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
 
           {displayedCocktails.length === 0 ? (
               <p className="text-center col-span-full text-lg text-gray-300 italic break-all">
@@ -53,30 +54,44 @@ export default function CocktailApp() {
           ) : (
             displayedCocktails.map((cocktail, index) => (
               // bg-linear-to-br from-black to-green-700
-              <Card key={cocktail.id} className={`text-white shadow-lg rounded-2xl border-3 border-gray-500 mt-6 ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
-              cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
-              cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
-              cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
-                <div className="relative w-full h-[260px]">
-                  <Image
-                    src={cocktail.image}
-                    alt={cocktail.name}
-                    fill
-                    className="object-cover rounded-t-2xl"
-                    onLoad={() => setLoaded(true)}
-                    style={{
-                        opacity: loaded ? 1 : 0,
-                        transition: "opacity 0.5s ease",
-                        display: "block",
-                      }}
-                    priority={index < 3} 
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h2 className="text-xl font-semibold mb-2">{cocktail.name}</h2>
-                  <p className="text-sm">{cocktail.ingredients}</p>
-                </CardContent>
-              </Card>
+                <Card key={index} className={`text-white shadow-lg rounded-2xl border-3 border-gray-500 pb-0 mt-4 h-[430px] ${ cocktail.name === "Mojito" ? "bg-linear-to-br from-black to-green-700":
+                cocktail.name === "Margarita" ? "bg-linear-to-br from-black to-yellow-300": 
+                cocktail.name === "Old Fashioned" ? "bg-linear-to-br from-black to-orange-500" :
+                cocktail.name === "Negroni" ? "bg-linear-to-br from-black to-red-600" : ""}`}>
+                  <div className="relative w-full h-[260px]">
+                    <Image
+                      src={cocktail.image}
+                      alt={cocktail.name}
+                      fill
+                      className="object-cover rounded-t-2xl"
+                      onLoad={() => setLoaded(true)}
+                      style={{
+                          opacity: loaded ? 1 : 0,
+                          transition: "opacity 0.5s ease",
+                          display: "block",
+                        }}
+                      priority={index < 3} 
+                    />
+                  </div>
+                  <CardContent className="p-4 bg-black/60 backdrop-blur-md rounded-b-xl h-[120px] flex flex-col justify-between">
+                    <div>
+                      <h2 className="text-xl font-bold mb-4">{cocktail.name}</h2>
+                      <div className="flex flex-col text-sm text-gray-200">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <Clock className="w-4 h-4"/>
+                          <span>{cocktail.prepTime}</span>
+                        </div>
+
+                        <div className="flex items-center gap-2 ">
+                          <span className="font-sans font-normal text-gray-200">
+                            <Target className="w-4 h-4 inline-block mr-1"/>
+                            {cocktail.difficulty}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
             ))
           )}
         </div>
