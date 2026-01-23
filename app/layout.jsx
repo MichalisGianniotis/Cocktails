@@ -1,14 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Poppins } from 'next/font/google';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  variable:"--font-montserrat",
+  subsets: ['latin'],
+  weight: ['700'] 
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = Poppins({
+  variable:"--font-poppins",
+  subsets: ['latin'],
+  weight: ['400','600'] 
 });
 
 export const metadata = {
@@ -58,15 +59,28 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "ShakerMap",
-              url: "https://shakermap.vercel.app",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "name": "ShakerMap",
+                  "url": "https://shakermap.vercel.app",
+                  "logo": "https://shakermap.vercel.app/cocktails.png",
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "ShakerMap",
+                  "url": "https://shakermap.vercel.app",
+                  "publisher": {
+                    "@id": "https://shakermap.vercel.app/#organization"
+                  }
+                }
+              ]
             }),
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased`}
       >
         {children}
       </body>
