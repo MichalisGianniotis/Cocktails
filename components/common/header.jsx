@@ -8,9 +8,9 @@ const Header = () => {
   const [open, setOpen] = useState(false)
 
   return (
-      <header className='bg-slate-950/80 text-white p-6 sticky top-0 z-50 shadow-lg backdrop-blur-sm w-full border-slate-700 border-b'>
+      <header className='bg-slate-950/80 text-white px-6 py-4 sticky top-0 z-50 shadow-lg backdrop-blur-sm w-full border-slate-700 border-b'>
         <nav className="max-w-8xl mx-auto flex items-center justify-between py-4">
-          <a href="#" className="text-xl md:text-[30px] font-bold font-montserrat">
+          <a href="#" className="text-2xl md:text-[30px] font-bold font-montserrat">
             🍸 ShakerMap
           </a>
           <div className=" hidden sm:flex items-center gap-6 text-sm md:text-lg font-poppins">
