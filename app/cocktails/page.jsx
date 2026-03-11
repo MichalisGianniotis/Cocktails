@@ -75,7 +75,7 @@ export default function CocktailsPage() {
                         priority={index < 3} 
                       />
                     </div>
-                    <CardContent className="m-0.5 absolute bottom-0 left-0 w-[98.6%] p-4 bg-black/50 backdrop-blur-md rounded-b-xl  flex flex-col justify-between ">
+                    <CardContent className="m-0.5 absolute bottom-0 left-0 w-[99%] p-4 bg-black/50 backdrop-blur-md rounded-b-xl  flex flex-col justify-between ">
                       <div>
                         <h2 className="text-xl font-bold mb-4 font-poppins">{cocktail.name}</h2>
                         <div className="flex flex-col text-sm text-gray-200">
